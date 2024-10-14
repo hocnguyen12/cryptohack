@@ -24,16 +24,12 @@ def decrypt(ciphertext):
 
     return {"plaintext": decrypted.hex()}
 
-plaintext = ""
+#first_block = bytes.fromhex(ciphertext[:16])
+resp = requests.get(base_url + "/decrypt/" + ciphertext[:16])
+first_block_dec = resp.json()["error"]
+print(f"first block deciphered using ECB : {first_block_dec}")
+
+prefix = ""
 while True:
     iv = os.urandom(16)
-    result = decrypt(ciphertext - iv.hex())
-    plaintext = result["plaintext"]
 
-    try:
-        decoded_text = bytes.fromhex(plaintext).decode('utf-8')
-        if "crypto" in decoded_text:
-            print(decoded_text)
-            break
-    except(ValueError, UnicodeDecodeError):
-        continue
