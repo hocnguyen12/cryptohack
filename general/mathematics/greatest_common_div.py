@@ -1,4 +1,7 @@
 """
+    Greatest Common Divisor challenge
+
+GCD pseudo code
 function gcd(a, b)
     while b ≠ 0
         t := b
