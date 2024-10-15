@@ -2,5 +2,5 @@
 
 Repository containing my solutions and progress on the CTF platform CRYPTOHACK
 
-![image](img/proxy-img.png)
+![image](./img/proxy-image.png)
 
