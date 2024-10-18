@@ -43,14 +43,15 @@ def ecc_add(a, b):
     y3 = lbda * (x1 - x3) - y1
     return [x3 % ecc_p, y3 % ecc_p]
 
-x = [5274, 2841]
-y = [8669, 740]
-print(f"x + y : {ecc_add(x, y)}")
-print(f"x + x : {ecc_add(x, x)}")
+if __name__ == '__main__':
+    x = [5274, 2841]
+    y = [8669, 740]
+    print(f"x + y : {ecc_add(x, y)}")
+    print(f"x + x : {ecc_add(x, x)}")
 
-p = [493, 5564]
-q = [1539, 4742]
-r = [4403, 5202]
+    p = [493, 5564]
+    q = [1539, 4742]
+    r = [4403, 5202]
 
-s = ecc_add(ecc_add(ecc_add(p, p), q), r )
-print(f"flag : crypto{{{s[0]}, {s[1]}}}")
+    s = ecc_add(ecc_add(ecc_add(p, p), q), r )
+    print(f"flag : crypto{{{s[0]}, {s[1]}}}")
