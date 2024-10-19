@@ -29,6 +29,13 @@ Repository containing my solutions and progress on the CTF platform CRYPTOHACK
     - [ ] Signatures part 2
 - [ ] Diffie-Hellman
 - [ ] Elliptic Curves
+    - [x] Background
+    - [x] Starter
+    - [ ] Parameter Choice 1
+    - [ ] Parameter Choice 2
+    - [ ] Signatures
+    - [ ] Edwards Curves
+    - [ ] Side Channels
 - [ ] Hash Functions
 - [ ] Crypto on the Web
 - [ ] Lattices
