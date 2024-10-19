@@ -19,6 +19,10 @@ Repository containing my solutions and progress on the CTF platform CRYPTOHACK
     - [ ] Authenticated Encryption
     - [ ] Linear Cryptanalysis
 - [ ] Mathematics
+    - [x] Modular Math
+    - [ ] Brainteasers Part 1
+    - [ ] Brainteasers Part 2
+    - [ ] Primes
 - [ ] RSA
     - [x] Starter
     - [ ] Primes part 1
