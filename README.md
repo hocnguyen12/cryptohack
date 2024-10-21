@@ -32,6 +32,10 @@ Repository containing my solutions and progress on the CTF platform CRYPTOHACK
     - [ ] Signatures part 1
     - [ ] Signatures part 2
 - [ ] Diffie-Hellman
+    - [ ] Starter
+    - [ ] Man in the Middle
+    - [ ] Group Theory
+    - [ ] Misc
 - [ ] Elliptic Curves
     - [x] Background
     - [x] Starter
@@ -42,6 +46,9 @@ Repository containing my solutions and progress on the CTF platform CRYPTOHACK
     - [ ] Side Channels
 - [ ] Hash Functions
 - [ ] Crypto on the Web
+    - [ ] JSON Web Tokens
+    - [ ] TLS Part 1 : The Protocol
+    - [ ] Cloud
 - [ ] Lattices
 - [ ] Isogenies
 - [ ] ZKPS
