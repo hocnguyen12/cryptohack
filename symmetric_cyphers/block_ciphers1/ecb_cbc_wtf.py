@@ -5,6 +5,7 @@
 from Crypto.Cipher import AES
 import os
 import requests
+from pwn import xor
 base_url = "http://aes.cryptohack.org/ecbcbcwtf"
 
 #get the cipherText
@@ -14,22 +15,28 @@ ciphertext = json_resp["ciphertext"]
 print(f"ciphertext : {ciphertext}")
 
 def decrypt(ciphertext):
-    ciphertext = bytes.fromhex(ciphertext)
-
-    cipher = AES.new(KEY, AES.MODE_ECB)
-    try:
-        decrypted = cipher.decrypt(ciphertext)
-    except ValueError as e:
-        return {"error": str(e)}
-
-    return {"plaintext": decrypted.hex()}
+    resp = requests.get(base_url + "/decrypt/" + ciphertext + '/')
+    return resp.json()["plaintext"]
 
 #first_block = bytes.fromhex(ciphertext[:16])
-resp = requests.get(base_url + "/decrypt/" + ciphertext[:16])
-first_block_dec = resp.json()["error"]
-print(f"first block deciphered using ECB : {first_block_dec}")
+print(len(ciphertext))
+f = [ciphertext[i:i + 32] for i in range(len(ciphertext) // 32)]
+print(f)
+b1 = decrypt(f[2])
+print(f"first decrypted block : {decrypt(f[2])}")
 
-prefix = ""
-while True:
-    iv = os.urandom(16)
+plaintext = []
+plaintext.append(xor(bytes.fromhex(f[1]), bytes.fromhex(b1)))
+b2 = decrypt(f[1])
+plaintext.append(xor(b2, f[0]))
+b3 = decrypt(f[0])
+#plaintext.append(xor())
 
+print("plaintext :", plaintext)
+print(plaintext[0].hex())
+
+flag = ""
+for i in range(len(plaintext), -1):
+    flag += plaintext[i].hex()
+
+print(f"flag : {flag}")

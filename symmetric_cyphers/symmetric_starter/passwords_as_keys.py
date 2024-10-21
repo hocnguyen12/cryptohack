@@ -20,7 +20,7 @@ with open("words") as f:
     words = [w.strip() for w in f.readlines()]
 keyword = random.choice(words)
 
-KEY = hashlib.md5(keyword.encode()).digest()
+#KEY = hashlib.md5(keyword.encode()).digest()
 
 #@chal.route('/passwords_as_keys/decrypt/<ciphertext>/<password_hash>/')
 def decrypt(ciphertext, password_hash):
@@ -46,7 +46,7 @@ while True:
     try:
         decoded_text = bytes.fromhex(plaintext).decode('utf-8')
         if "crypto" in decoded_text:
-            print(decoded_text)
+            print(f"flag : {decoded_text}")
             break
     except(ValueError, UnicodeDecodeError):
         continue

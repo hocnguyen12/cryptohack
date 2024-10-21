@@ -34,6 +34,7 @@ token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmbGFnIjoiY3J5cHRve2p3dF9jb250ZW
 
 import jwt
 
-decoded = jwt.decode(token, "secret", algorithms=["HS256"])
+# JWT are not crypted but encoded in base64, the sign key is not needed to read the token content
+decoded = jwt.decode(token, options={"verify_signature": False})
 
 print(f"flag : {decoded}")
