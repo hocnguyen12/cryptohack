@@ -38,4 +38,4 @@ if "error" in json_resp:
 else:
     output = json_resp["response"]
 
-print(output)
+print(f"output : {output}")
