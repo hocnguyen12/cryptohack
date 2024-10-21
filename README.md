@@ -1,6 +1,6 @@
 # CRYPTOHACK
 
-Repository containing my solutions and progress on the CTF platform CRYPTOHACK
+Repository containing my solutions and progress on the CTF platform [CRYPTOHACK](https://cryptohack.org/).
 
 ![image](./img/proxy-image.png)
 
