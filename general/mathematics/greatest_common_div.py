@@ -21,4 +21,4 @@ def gcd(a, b):
 c = 66528
 d = 52920
 print(gcd(8, 12))
-print(gcd(c, d))
+print(f"flag : {gcd(c, d)}")
