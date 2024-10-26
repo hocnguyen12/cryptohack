@@ -1,3 +1,7 @@
+"""
+    Encoding challenge
+"""
+
 from pwn import * # pip install pwntools
 import json
 import codecs
