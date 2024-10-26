@@ -1,12 +1,14 @@
 """
-    You either know, XOR you don't
+    You either know, XOR you don't challenge
 """
+
 enc_flag = bytes.fromhex('0e0b213f26041e480b26217f27342e175d0e070a3c5b103e2526217f27342e175d0e077e263451150104')
 flag_prefix = b'crypto{'
 
 key = bytes(a ^ b for a, b in zip(enc_flag, flag_prefix))
 print(f"key : {key}")
 
+# After reading the value of 'key'
 key = b'myXORkey'
 
 flag = []

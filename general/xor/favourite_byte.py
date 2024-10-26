@@ -1,3 +1,7 @@
+"""
+    Secret Byte challenge
+"""
+
 import base64
 import codecs
 from Cryptodome.Util import number as nb
@@ -15,8 +19,8 @@ for key in range(256):
     decrypted_data = xor_cipher(encrypted_data, key)
     try:
         decrypted_text = decrypted_data.decode('ascii')
-        if 'crypto' in decrypted_text or 'CRYPTO' in decrypted_text:
+        if 'crypto' in decrypted_text in decrypted_text:
             print(f'Key: {key}')
-            print(decrypted_text)
+            print(f"flag : {decrypted_text}")
     except UnicodeDecodeError:
         continue

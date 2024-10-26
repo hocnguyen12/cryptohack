@@ -1,3 +1,7 @@
+"""
+    Lemur XOR Challenge
+"""
+
 from PIL import Image
 import numpy as np
 
@@ -20,4 +24,4 @@ for y in range(height):
 test = Image.fromarray(arr)
 test.show()
 test.save("crypto{XORly_not!}.png")
-print("crypto{XORly_not!}")
+print("flag : crypto{XORly_not!}")

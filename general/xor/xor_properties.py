@@ -1,3 +1,7 @@
+"""
+    XOR Properties challenge
+"""
+
 import sys
 import codecs
 
@@ -9,4 +13,5 @@ FLAG_KEY1_KEY3_KEY2 = bytes.fromhex("04ee9855208a2cd59091d04767ae47963170d1660df
 key2 = int.from_bytes(KEY1, "big") ^ int.from_bytes(KEY2_KEY1, "big")
 key3 = int.from_bytes(KEY2_KEY3, "big") ^ key2
 flag = hex(int.from_bytes(FLAG_KEY1_KEY3_KEY2, "big") ^ key2 ^ key3 ^ int.from_bytes(KEY1, "big"))
-print(codecs.decode(flag[2:], "hex").decode("ASCII"))
+
+print(f"flag : {codecs.decode(flag[2:], 'hex').decode('ASCII')}")
