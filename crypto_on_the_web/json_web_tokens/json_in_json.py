@@ -21,14 +21,13 @@ username = "paul" + '", "admin" : "' + "True"
 body = '{' + '"admin": "' + "False" + '", "username": "' + str(username) + '"}'
 print(f"body : {body}")
 
-#username = '{"paul": "admin", "admin": "True"}'
-#body = '{"admin": "False", "username": ' + username + '}'
 print(f"payload : {json.loads(body)}")
 encoded = jwt.encode(json.loads(body), SECRET_KEY, algorithm='HS256')
 print(f"encoded : {encoded}")
 
 decode = jwt.decode(encoded, SECRET_KEY, algorithms=['HS256'])
 print(f"decode : {decode}")
+# END TEST
 
 
 json_content = "paul" + '", "admin" : "' + "True"
