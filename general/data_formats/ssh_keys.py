@@ -1,5 +1,7 @@
 """
-<nguyenvh ~/Sync/cryptohack/general/data_formats [21:29]> ssh-keygen -f bruce_rsa_6e7ecd53b443a97013397b1a1ea30e14.pub -e -m pem
+    SSH Keys challenge
+
+$ssh-keygen -f bruce_rsa_6e7ecd53b443a97013397b1a1ea30e14.pub -e -m pem
 -----BEGIN RSA PUBLIC KEY-----
 MIIBigKCAYEArTy6m2vhhbwx3RVbNVb3ZOenCqqsOXHaJpbtN+OuulLKBSKpIoPB
 +ZDbDXn0qWkf4lOxtGSgolkUbgG07Lhzfgs+dul4UL84CkwZExmF3Rf1nRv+v7pq
@@ -18,4 +20,4 @@ from Crypto.PublicKey import RSA
 with open("bruce.pem", "rb") as f:
     data = f.read()
     mykey = RSA.import_key(data)
-    print(mykey.n)
+    print(f"flag : {mykey.n}")

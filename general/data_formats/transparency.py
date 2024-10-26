@@ -1,5 +1,7 @@
 """
-<nguyenvh ~/Sync/cryptohack/general/data_formats [21:50]> openssl rsa -inform PEM -pubin -in transparency_afff0345c6f99bf80eab5895458d8eab.pem -text -noout
+    Transparency challenge
+
+$openssl rsa -inform PEM -pubin -in transparency_afff0345c6f99bf80eab5895458d8eab.pem -text -noout
 Public-Key: (2048 bit)
 Modulus:
     00:b9:88:f4:ea:6e:6a:e0:cf:12:b0:44:30:29:7f:
